@@ -1,0 +1,15 @@
+<div class="container color-light" [@goals]='posts.length'>
+  <div class="col">
+    <p class="sm">Use this form below to add a new bucket list goal. What do you want to accomplish in your life?</p>
+  </div>
+  <div class='getBtn' (click)='getPosts()'>
+    get posts
+  </div>
+  <ng4-loading-spinner> </ng4-loading-spinner>
+  <div class="col">
+    <div class="life-container" *ngFor='let post of posts; let i=index ' (click)="deletePost(i)">
+      <div>{{post.title}}</div>
+      <img src="{{post.media.m}}" height="42" width="42">
+    </div>
+  </div>
+</div>
